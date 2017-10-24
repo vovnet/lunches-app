@@ -1,1 +1,8 @@
-day
+- @meals.each do |kind|
+  %ul
+    = kind
+    - @menu.each do |meal|
+      - if kind == meal.meal_type.kind
+        %li
+          = "#{meal.name} - #{meal.price}$"
+  
