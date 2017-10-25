@@ -42,6 +42,7 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     arel (8.0.0)
     bcrypt (3.1.11-x64-mingw32)
+    bcrypt (3.1.11-x86-mingw32)
     bindex (0.5.0)
     builder (3.2.3)
     byebug (9.1.0)
@@ -78,6 +79,7 @@ GEM
       factory_bot (~> 4.8.2)
       railties (>= 3.0.0)
     ffi (1.9.18-x64-mingw32)
+    ffi (1.9.18-x86-mingw32)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     haml (5.0.4)
@@ -104,8 +106,11 @@ GEM
     nio4r (2.1.0)
     nokogiri (1.8.1-x64-mingw32)
       mini_portile2 (~> 2.3.0)
+    nokogiri (1.8.1-x86-mingw32)
+      mini_portile2 (~> 2.3.0)
     orm_adapter (0.5.0)
     pg (0.21.0-x64-mingw32)
+    pg (0.21.0-x86-mingw32)
     public_suffix (3.0.0)
     puma (3.10.0)
     rack (2.0.3)
@@ -210,8 +215,10 @@ GEM
 
 PLATFORMS
   x64-mingw32
+  x86-mingw32
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
