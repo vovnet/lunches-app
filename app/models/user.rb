@@ -3,8 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :validatable
 
-  def save
-    self.admin = true if User.all.count == 0
-    super
+  def set_admin_first_user
+    self.admin = true if User.first.id == self.id
   end
 end
