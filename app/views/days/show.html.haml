@@ -1,8 +1,12 @@
-- @meals.each do |kind|
-  %ul
-    = kind
-    - @menu.each do |meal|
-      - if kind == meal.meal_type.kind
-        %li
-          = "#{meal.name} - #{meal.price}$"
-  
+
+= form_tag('/order', methos: 'post') do
+  - @meals.each do |kind|
+    %ul
+      = kind
+      - @menu.each do |meal|
+        - if kind == meal.meal_type.kind
+          %li
+            = label_tag(:meal, "#{meal.name} - #{meal.price}$")
+            = radio_button_tag(kind, meal.name)
+
+  = submit_tag('Complete')
