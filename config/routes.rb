@@ -9,5 +9,8 @@ Rails.application.routes.draw do
 
   namespace :admin do 
     get '/users', to: 'users#index'
+    get '/items', to: 'items#index'
+    get '/item/new', to: 'items#new'
+    post '/item/create', to: 'items#create'
   end
 end
