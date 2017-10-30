@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   
   get '/dashboard', to: 'dashboard#index' 
   get '/orders/:id', to: 'orders#new'
-  post 'orders/create'
+  post '/orders/create'
 
   namespace :admin do 
     get '/users', to: 'users#index'
