@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   post 'orders/create'
 
   namespace :admin do 
-    
+    get '/users', to: 'users#index'
   end
 end
