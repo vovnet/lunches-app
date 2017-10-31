@@ -7,6 +7,7 @@ class Admin::ItemsController < Admin::AdminBaseController
     @item = Menu.new(menu_params)
 
     if @item.save
+      flash[:notice] = "Item successfully added!"
       redirect_to action: "index"
     else
       redirect_to request.referrer
@@ -14,6 +15,7 @@ class Admin::ItemsController < Admin::AdminBaseController
   end
 
   def index
+    @items = Menu.get_menu_by_date(Date.current)
   end
 
   protected
