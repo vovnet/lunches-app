@@ -1,0 +1,11 @@
+- @orders.each do |order|
+  %ul
+    = order.user.username
+    - order.load_items
+    - order.items.each do |item|
+      %li
+        = item.name
+        = "#{item.price}$"
+    = "total cost: #{order.get_total_cost}$"
+
+= "Total orders cost: #{Order.total_orders_cost(@orders)}"

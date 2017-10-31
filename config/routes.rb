@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     get '/users', to: 'users#index'
     get '/items', to: 'items#index'
     get '/item/new', to: 'items#new'
+    get '/orders/:id', to: 'orders#show'
     post '/item/create', to: 'items#create'
   end
 end

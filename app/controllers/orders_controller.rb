@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
   def new
-    date = Menu.get_date_for_current_wday(params[:id].to_i)
-    @menu = Menu.get_menu_by_date(date)
+    date = get_date_for_current_wday(params[:id].to_i)
+    @menu = get_record_by_date(date, Menu)
 
     @meals = Array.new
     @menu.each do |m|

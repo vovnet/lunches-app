@@ -15,7 +15,7 @@ class Admin::ItemsController < Admin::AdminBaseController
   end
 
   def index
-    @items = Menu.get_menu_by_date(Date.current)
+    @items = get_record_by_date(Date.current, Menu)
   end
 
   protected
