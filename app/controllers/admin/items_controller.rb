@@ -21,6 +21,6 @@ class Admin::ItemsController < Admin::AdminBaseController
   protected
 
   def menu_params
-    params.require(:menu).permit(:name, :price, :meal_type_id)
+    params.require(:menu).permit(:name, :price, :meal_type_id, :image)
   end
 end
