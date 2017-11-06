@@ -7,5 +7,6 @@
           %li
             = label_tag(:meal, "#{meal.name} - #{meal.price}$")
             = radio_button_tag(kind, meal.id)
+            = image_tag meal.image.url
 
   = submit_tag('Complete')
