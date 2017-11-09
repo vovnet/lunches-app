@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   post '/orders/create'
 
   namespace :admin do 
+    get '/dashboard', to: 'dashboard#index'
     get '/users', to: 'users#index'
     get '/items', to: 'items#index'
     get '/item/new', to: 'items#new'

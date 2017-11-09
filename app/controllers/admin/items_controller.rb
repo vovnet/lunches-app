@@ -10,7 +10,7 @@ class Admin::ItemsController < Admin::AdminBaseController
       flash[:notice] = "Item successfully added!"
       redirect_to action: "index"
     else
-      redirect_to request.referrer
+      render :new
     end
   end
 

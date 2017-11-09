@@ -1,4 +1,10 @@
 = form_for @item, html: { multipart: true }, url: { action: "create" } do |f|
+  - if @item.errors.any?
+    = pluralize(@item.errors.count, 'error')
+    %ul
+      - @item.errors.full_messages.each do |msg|
+        %li
+          = msg
   = f.label :name
   = f.text_field :name
   = f.label :price
