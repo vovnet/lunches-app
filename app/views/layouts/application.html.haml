@@ -1,9 +1,9 @@
 %html
   %head
     %title LunchesApp
-    =csrf_meta_tags
-    =stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-    =javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = csrf_meta_tags
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   %body
     #container
@@ -11,28 +11,28 @@
         %ul{:class => 'nav nav-pills'}
           %li.nav-item
             %li
-              =link_to('Home', root_path, class: "nav-link")
+              = link_to('Home', root_path, class: "nav-link")
           %li.nav-item
-          -if user_signed_in?
+          - if user_signed_in?
             %li
-              =link_to('Dashboard', dashboard_path, class: "nav-link")
+              = link_to('Dashboard', dashboard_path, class: "nav-link")
             -if current_user.admin? 
               %li
-                =link_to('Orders', admin_dashboard_path, class: "nav-link")
+                = link_to('Orders', admin_dashboard_path, class: "nav-link")
               %li
-                =link_to('New item', admin_item_new_path, class: "nav-link")
+                = link_to('New item', admin_item_new_path, class: "nav-link")
             %li
-              =link_to(current_user.username, edit_user_registration_path, class: "nav-link")
+              = link_to(current_user.username, edit_user_registration_path, class: "nav-link")
             %li
-              =link_to('Logout', destroy_user_session_path, method: :delete, class: "nav-link")
-          -else
+              = link_to('Logout', destroy_user_session_path, method: :delete, class: "nav-link")
+          - else
             %li
-              =link_to('Login', new_user_session_path, class: "nav-link")
+              = link_to('Login', new_user_session_path, class: "nav-link")
 
     #container
       #content
         %p.notice
-          =notice
+          = notice
         %p.alert
-          =alert
-        =yield
+          = alert
+        = yield
