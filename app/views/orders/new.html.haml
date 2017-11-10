@@ -1,13 +1,25 @@
-= form_tag(orders_create_path, methos: 'post') do
-  - @meals.each do |kind|
-    %ul
-      = kind
-      - @menu.each do |meal|
-        - if kind == meal.meal_type.kind
-          %li
-            = label_tag(:meal, "#{meal.name} - #{meal.price}$")
-            = radio_button_tag(kind, meal.id)
-            - unless meal.image.url.nil?
-              = image_tag meal.image.url
+- unless @menu.empty?
+  = form_tag(orders_create_path, methos: 'post') do
+    - @meals.each do |kind|
+      .item{ :id => "item-#{kind}" }
+        - @menu.each do |meal|
+          - if kind == meal.meal_type.kind
+            .row
+              .col-md-3
+                - unless meal.image.url.nil?
+                  = image_tag(meal.image.url, :class => 'img-thumbnail')
+              .col-md-9
+                #item-desc
+                  = label_tag(:meal, "#{meal.name}")
+                #item-desc
+                  Price: 
+                  = "#{meal.price} $"
+                #item-desc
+                  Add
+                  = radio_button_tag(kind, meal.id)
+                
 
-  = submit_tag('Complete')
+    = submit_tag('Complete')
+- else
+  #empty-menu
+    Menu is empty!

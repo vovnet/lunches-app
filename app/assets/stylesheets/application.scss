@@ -12,3 +12,16 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "dashboard";
+
+#form-container {
+  max-width: 400px;
+}
+
+#container {
+  padding: 50px
+}
+
+#empty-menu {
+  color: #f00;
+}

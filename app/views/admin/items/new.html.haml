@@ -1,14 +1,21 @@
-= form_for @item, html: { multipart: true }, url: { action: "create" } do |f|
-  - if @item.errors.any?
-    = pluralize(@item.errors.count, 'error')
-    %ul
-      - @item.errors.full_messages.each do |msg|
-        %li
-          = msg
-  = f.label :name
-  = f.text_field :name
-  = f.label :price
-  = f.text_field :price
-  = f.file_field :image
-  = select_tag("menu[#{:meal_type_id}]", options_from_collection_for_select(MealType.all, :id, :kind))
-  = f.submit "Create"
+#form-container
+  = form_for @item, html: { multipart: true }, url: { action: "create" } do |f|
+    - if @item.errors.any?
+      = pluralize(@item.errors.count, 'error')
+      %ul
+        - @item.errors.full_messages.each do |msg|
+          %li
+            = msg
+    #form-group
+      = f.label :name
+      = f.text_field :name, :class => 'form-control'
+    #form-group
+      = f.label :price
+      = f.text_field :price, :class => 'form-control'
+    #form-group
+      = f.label :kind
+      = select_tag("menu[#{:meal_type_id}]", options_from_collection_for_select(MealType.all, :id, :kind))
+    #form-group
+      = f.label :image
+      = f.file_field :image
+    = f.submit "Create", :class => 'btn btn-primary'

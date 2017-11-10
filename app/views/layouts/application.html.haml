@@ -6,7 +6,7 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   %body
-    #container
+    .container
       #nav
         %ul{:class => 'nav nav-pills'}
           %li.nav-item
@@ -29,7 +29,7 @@
             %li
               = link_to('Login', new_user_session_path, class: "nav-link")
 
-    #container
+    .container
       #content
         %p.notice
           = notice

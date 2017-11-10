@@ -1,3 +1,33 @@
 // Place all the styles related to the dashboard controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#days {
+  text-align: center;
+  
+  a {
+    font-size: 20px;
+    padding: 20px;
+  }
+} 
+
+.item {
+  padding: 10px;
+  margin: 20px;
+}
+
+#item-first {
+  background-color: #e2f8f0;
+}
+
+#item-main {
+  background-color: #f8e2f3;
+}
+
+#item-drink {
+  background-color: #f7f8e2;
+}
+
+#item-desc {
+
+}
