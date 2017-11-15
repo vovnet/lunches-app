@@ -12,4 +12,5 @@ script:
 
 before_script:
   - psql -c 'create database my_app_test' -U postgres
+  - rm /usr/local/var/postgres/postmaster.pid
 bundler_args: --binstubs=./bundler_stubs
