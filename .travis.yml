@@ -1,8 +1,3 @@
 language: ruby
 rvm:
   - 2.3.3
-  - jruby
-
-script:
-  - bin/rake db:migrate RAILS_ENV=test
-  - bin/rake
